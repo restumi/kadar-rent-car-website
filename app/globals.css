@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
+/* ─── Brand design tokens ─────────────────────────────────────────────────── */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Brand palette */
+  --color-primary: #155eef;
+  --color-navy: #102a56;
+  --color-light-blue: #eaf2ff;
+  --color-bg: #f7f9fc;
+  --color-text-primary: #172b4d;
+  --color-text-secondary: #64748b;
+  --color-whatsapp: #25d366;
 }
 
 @theme inline {
@@ -10,6 +20,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Expose brand tokens to Tailwind utilities */
+  --color-primary: var(--color-primary);
+  --color-navy: var(--color-navy);
+  --color-light-blue: var(--color-light-blue);
+  --color-bg: var(--color-bg);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-whatsapp: var(--color-whatsapp);
 }
 
 @media (prefers-color-scheme: dark) {

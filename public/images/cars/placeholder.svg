@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#e2e8f0"/>
+  <rect x="300" y="220" width="200" height="160" rx="8" fill="#cbd5e1"/>
+  <!-- Car silhouette -->
+  <path d="M220 340 L230 300 L260 270 L330 255 L400 250 L470 255 L540 270 L570 300 L580 340 Z"
+        fill="#94a3b8" stroke="#64748b" stroke-width="2"/>
+  <circle cx="290" cy="345" r="28" fill="#64748b"/>
+  <circle cx="290" cy="345" r="16" fill="#94a3b8"/>
+  <circle cx="510" cy="345" r="28" fill="#64748b"/>
+  <circle cx="510" cy="345" r="16" fill="#94a3b8"/>
+  <path d="M265 295 L290 270 L380 265 L380 295 Z" fill="#bfdbfe" opacity="0.6"/>
+  <path d="M335 265 L420 265 L420 295 L335 295 Z" fill="#bfdbfe" opacity="0.6"/>
+  <path d="M420 265 L510 270 L535 295 L420 295 Z" fill="#bfdbfe" opacity="0.6"/>
+  <!-- Label -->
+  <text x="400" y="415" font-family="system-ui, sans-serif" font-size="18"
+        font-weight="500" fill="#64748b" text-anchor="middle">Foto Segera Hadir</text>
+</svg>
