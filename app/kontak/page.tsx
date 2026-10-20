@@ -6,10 +6,21 @@ import { buildWhatsAppUrl } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Lokasi & Kontak",
   description:
-    "Temukan lokasi dan informasi kontak Kadar Rent Car. Hubungi kami via WhatsApp untuk reservasi dan pertanyaan layanan rental mobil.",
+    "Hubungi Kadar Rent Car untuk rental mobil di Semarang dan Ungaran. Tersedia via WhatsApp. Cakupan layanan Semarang dan Ungaran.",
+  keywords: [
+    "kontak Kadar Rent Car",
+    "Kadar Rent Car Semarang",
+    "rental mobil Semarang",
+    "rental mobil Ungaran",
+    "informasi layanan rental",
+  ],
+  alternates: {
+    canonical: "/kontak",
+  },
   openGraph: {
     title: "Lokasi & Kontak — Kadar Rent Car",
-    description: "Alamat, jam operasional, dan cara menghubungi Kadar Rent Car.",
+    description:
+      "Hubungi Kadar Rent Car untuk rental mobil di Semarang dan Ungaran. Jam operasional, WhatsApp, dan informasi layanan.",
     locale: "id_ID",
     type: "website",
   },
@@ -316,6 +327,21 @@ export default function KontakPage() {
               ))}
             </div>
           </section>
+
+          {/* Service area note */}
+          <div
+            className="mt-10 rounded-2xl p-6 text-center"
+            style={{ backgroundColor: "#EAF2FF" }}
+          >
+            <h2 className="text-lg font-bold" style={{ color: "#172B4D" }}>
+              Cakupan Layanan
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed" style={{ color: "#64748B" }}>
+              Kadar Rent Car melayani kebutuhan rental mobil di <strong>Semarang</strong> dan{" "}
+              <strong>Ungaran</strong>. Pengantaran atau penjemputan dapat dilakukan sesuai
+              kesepakatan. Hubungi kami untuk konfirmasi ketersediaan di area Anda.
+            </p>
+          </div>
         </div>
       </main>
     </div>
@@ -330,8 +356,12 @@ const faqs = [
     a: "Hubungi kami melalui WhatsApp dengan menyebutkan kendaraan yang diinginkan, tanggal sewa, durasi, dan metode sewa yang dipilih. Tim kami akan membantu proses pemesanan.",
   },
   {
+    q: "Apakah melayani area Ungaran?",
+    a: "Ya, Kadar Rent Car melayani pelanggan di Semarang dan Ungaran. Pengantaran atau penjemputan dapat diatur sesuai kesepakatan — hubungi kami untuk konfirmasi ketersediaan.",
+  },
+  {
     q: "Apakah tersedia layanan antar-jemput kendaraan?",
-    a: "Informasi layanan antar-jemput dan area jangkauan dapat dikonfirmasi langsung kepada tim kami melalui WhatsApp.",
+    a: "Pengantaran mobil ke lokasi pelanggan atau penjemputan dapat diatur sesuai kesepakatan. Hubungi kami untuk informasi lebih lanjut mengenai area dan ketentuan layanan.",
   },
   {
     q: "Berapa lama waktu minimum penyewaan?",

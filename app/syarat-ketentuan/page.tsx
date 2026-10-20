@@ -4,10 +4,13 @@ import SectionHeading from "@/components/SectionHeading";
 export const metadata: Metadata = {
   title: "Syarat & Ketentuan",
   description:
-    "Baca syarat dan ketentuan sewa kendaraan Kadar Rent Car sebelum melakukan pemesanan.",
+    "Baca syarat dan ketentuan sewa kendaraan Kadar Rent Car sebelum melakukan pemesanan. Berlaku untuk layanan rental mobil di Semarang dan Ungaran.",
+  alternates: {
+    canonical: "/syarat-ketentuan",
+  },
   openGraph: {
     title: "Syarat & Ketentuan — Kadar Rent Car",
-    description: "Syarat dan ketentuan sewa kendaraan Kadar Rent Car.",
+    description: "Syarat dan ketentuan sewa kendaraan Kadar Rent Car di Semarang dan Ungaran.",
     locale: "id_ID",
     type: "website",
   },

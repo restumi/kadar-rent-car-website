@@ -1,117 +1,245 @@
-# Task: Perbaiki dan Buat Halaman 404 Not Found — Kadar Rent Car
+# TASK: Implementasi SEO Lokal Semarang dan Ungaran — Kadar Rent Car
 
-Saya ingin memperbaiki penanganan URL yang tidak ditemukan pada project Kadar Rent Car.
+## Konteks Project
 
-**PENTING:**
-- Jangan membuat ulang project dari awal.
-- Jangan mengulang implementasi task yang sudah selesai.
-- Jangan mengubah desain dan fungsionalitas halaman yang sudah ada, kecuali jika memang diperlukan untuk memperbaiki routing 404.
-- Periksa struktur project dan kode yang sudah ada terlebih dahulu sebelum melakukan perubahan.
-- Gunakan struktur dan design system yang sudah ada di project.
+Project: Kadar Rent Car  
+Framework: Next.js 16.4.2 App Router  
+Bahasa: TypeScript  
+Styling: Tailwind CSS  
+Deployment: Vercel, sementara menggunakan subdomain `vercel.app`
 
-## 1. Masalah Saat Ini
+Website yang sudah tersedia:
+- Home `/`
+- Katalog `/katalog`
+- Profil `/profil`
+- Syarat & Ketentuan `/syarat-ketentuan`
+- Kontak `/kontak`
+- Global 404 Not Found
 
-Ketika aplikasi dijalankan di `http://localhost:3000`, kemudian pengguna membuka URL yang tidak memiliki route, misalnya:
+Website memiliki tema biru dan mendukung layanan:
+- Rental mobil lepas kunci.
+- Rental mobil dengan driver.
+- Pilihan armada beragam, termasuk kategori city car, MPV, dan kategori lain jika memang tersedia.
+- Pengantaran mobil atau penjemputan pelanggan sesuai kesepakatan.
 
-- `http://localhost:3000/apa-aja`
-- `http://localhost:3000/halaman-tidak-ada`
-- `http://localhost:3000/random-url`
+Wilayah layanan yang dikonfirmasi:
+- Semarang.
+- Ungaran.
 
-Saat ini yang tampil adalah halaman putih kosong dengan Navbar dan Footer, bukan halaman 404 Not Found yang semestinya.
+Tujuan task ini adalah memperkuat SEO lokal agar website lebih mudah dipahami mesin pencari dan relevan untuk calon pelanggan di kedua wilayah tersebut.
 
-## 2. Tujuan
+**Jangan membuat ulang project, jangan mengubah desain secara besar-besaran, dan jangan menghapus fitur yang sudah selesai. Audit kode terlebih dahulu.**
 
-Buat halaman 404 Not Found yang berfungsi dengan benar dan konsisten dengan desain website Kadar Rent Car.
+## 1. Audit Implementasi yang Ada
 
-Ketika pengguna membuka URL yang tidak terdaftar, aplikasi harus menampilkan halaman 404 yang informatif, bukan halaman kosong.
+Periksa:
+- `app/layout.tsx`
+- Seluruh `app/**/page.tsx`
+- `app/not-found.tsx`
+- `config.ts`
+- `cars.ts` atau lokasi data kendaraan yang sebenarnya
+- `app/sitemap.ts` dan `app/robots.ts` jika sudah ada
+- `next.config.ts`
+- `package.json`
+- Komponen Navbar, Footer, Hero, katalog, dan kontak.
 
-## 3. Pemeriksaan Routing
+Identifikasi metadata, sitemap, robots, canonical, Open Graph, dan structured data yang sudah ada.
 
-Sebelum melakukan perubahan:
+Jangan menduplikasi fitur yang sudah benar. Jangan mengubah routing yang sudah berfungsi.
 
-1. Periksa struktur direktori `app/` sesuai Next.js App Router.
-2. Periksa apakah `app/not-found.tsx` sudah ada dan apakah implementasinya benar.
-3. Periksa `app/layout.tsx`, nested layout, middleware, `proxy.ts` jika ada, serta konfigurasi routing lain yang mungkin memengaruhi penanganan URL tidak dikenal.
-4. Cari penyebab sebenarnya mengapa URL yang tidak cocok dengan route justru menampilkan halaman kosong.
-5. Jangan hanya membuat komponen baru tanpa memastikan halaman tersebut benar-benar digunakan oleh Next.js.
+## 2. Strategi Keyword
 
-Gunakan mekanisme 404 bawaan Next.js App Router. Untuk URL yang tidak cocok dengan route mana pun, pastikan halaman global `app/not-found.tsx` ditampilkan dengan benar. Gunakan `notFound()` hanya jika memang diperlukan untuk menangani kasus halaman atau resource yang tidak ditemukan di dalam route tertentu.
+Gunakan pemetaan berikut sebagai arahan konten, bukan sebagai klaim volume pencarian.
 
-## 4. Desain Halaman 404
+### Keyword prioritas awal
 
-Buat halaman 404 yang modern, profesional, minimalis, dan sesuai dengan identitas visual Kadar Rent Car.
+Beranda `/`:
+- rental mobil Semarang
+- sewa mobil Semarang
+- Kadar Rent Car Semarang
+- rental mobil lepas kunci Semarang
+- rental mobil dengan driver Semarang
 
-Ketentuan desain:
+Katalog `/katalog`:
+- katalog mobil rental Semarang
+- pilihan mobil rental Semarang
+- sewa mobil Semarang
+- rental city car Semarang jika city car tersedia
+- rental MPV Semarang jika MPV tersedia
 
-- Gunakan tema biru yang sudah menjadi warna utama website.
-- Pertahankan font, warna, spacing, border radius, dan gaya komponen yang sudah digunakan.
-- Pertahankan Navbar dan Footer global yang sudah ada.
-- Area konten utama harus menampilkan halaman 404 yang jelas dan tidak kosong.
-- Tampilkan angka **404** dengan ukuran besar dan hierarki visual yang kuat.
-- Tambahkan judul **"Halaman Tidak Ditemukan"**.
-- Tambahkan deskripsi singkat: "Maaf, halaman yang kamu cari tidak ditemukan atau mungkin sudah dipindahkan."
-- Tambahkan tombol utama **"Kembali ke Beranda"** yang mengarah ke `/`.
-- Tambahkan tombol atau tautan sekunder **"Lihat Katalog Mobil"** yang mengarah ke `/katalog`.
-- Jika sesuai dengan design system yang sudah ada, tambahkan ilustrasi atau ikon sederhana bertema mobil, perjalanan, atau pencarian halaman.
-- Pastikan konten berada di tengah secara visual, memiliki jarak yang proporsional, dan terlihat profesional.
-- Jangan membuat halaman terlalu ramai atau menggunakan animasi berlebihan.
+Kontak `/kontak`:
+- kontak Kadar Rent Car
+- Kadar Rent Car Semarang
+- informasi layanan rental mobil Semarang dan Ungaran
 
-## 5. Responsivitas dan Aksesibilitas
+Profil `/profil`:
+- profil Kadar Rent Car
+- layanan Kadar Rent Car di Semarang dan Ungaran
 
-Pastikan halaman berfungsi dengan baik pada:
+### Keyword kandidat untuk validasi
 
-- Mobile mulai dari lebar 320px.
-- Tablet.
-- Laptop dan desktop.
+- rental mobil Ungaran
+- sewa mobil Ungaran
+- rental mobil lepas kunci Ungaran
+- rental mobil dengan driver Ungaran
+- rental mobil harian Semarang
+- rental mobil keluarga Semarang
+- rental mobil antar ke lokasi Semarang
+- rental mobil luar kota dari Semarang
+
+Gunakan keyword kandidat hanya jika sesuai dengan layanan yang tersedia. Jangan mengklaim data volume pencarian, tingkat kesulitan keyword, atau potensi ranking jika belum ada data pendukung.
+
+Jangan memasukkan seluruh keyword ke semua halaman. Tetapkan satu topik utama untuk setiap halaman dan gunakan variasi keyword secara natural.
+
+## 3. Metadata SEO
+
+Gunakan Metadata API resmi Next.js App Router.
 
 Pastikan:
-- Tidak ada horizontal overflow.
-- Tombol mudah digunakan pada layar sentuh.
-- Kontras warna teks dan tombol memadai.
-- Semua tombol dan tautan dapat diakses menggunakan keyboard.
-- Gunakan elemen semantik yang tepat.
-- Jangan menambahkan `"use client"` jika tidak diperlukan.
+- `metadataBase` menggunakan URL production yang benar.
+- Title dan meta description unik untuk setiap halaman.
+- Judul halaman akurat, ringkas, dan tidak diisi keyword berulang.
+- Beranda menargetkan rental mobil Semarang.
+- Katalog fokus pada pilihan armada.
+- Profil fokus pada informasi perusahaan yang nyata.
+- Kontak fokus pada kontak dan cakupan layanan yang terkonfirmasi.
+- Halaman Syarat & Ketentuan mempunyai metadata yang relevan dengan isinya.
+- Open Graph dan metadata sosial sesuai dengan identitas Kadar Rent Car.
+- Canonical URL benar untuk setiap halaman.
+- Jangan menetapkan localhost atau URL deployment preview sebagai canonical production.
+- Jangan menambahkan `noindex` ke halaman publik yang memang ingin ditampilkan di Google.
 
-## 6. Ketentuan Implementasi
+Gunakan environment variable `NEXT_PUBLIC_SITE_URL` jika sesuai dengan pola project.
 
-- Gunakan TypeScript sesuai pola project.
-- Gunakan Tailwind CSS dan komponen yang sudah tersedia di project.
-- Gunakan `next/link` untuk navigasi internal.
+Tambahkan contoh konfigurasi ke `.env.example` jika project menggunakannya. Dokumentasikan bahwa nilainya harus berupa URL HTTPS production yang stabil, tanpa trailing slash jika implementasinya mengharapkan format tersebut.
+
+Jika URL production belum diketahui, jangan mengarang URL final. Sediakan fallback development yang aman dan pastikan canonical production tidak mengarah ke localhost.
+
+## 4. Konten SEO Beranda
+
+Perbaiki konten yang sudah ada tanpa menghilangkan desain atau komponen sebelumnya.
+
+Pastikan halaman menjelaskan secara natural:
+- Kadar Rent Car menyediakan layanan rental mobil di Semarang.
+- Cakupan layanan juga mencakup Ungaran.
+- Pilihan rental lepas kunci dan dengan driver.
+- Variasi armada sesuai data kendaraan yang benar-benar tersedia.
+- Proses menghubungi dan memesan mobil.
+- Pengantaran mobil atau penjemputan pelanggan sesuai kesepakatan, dengan batasan layanan yang sebenarnya.
+
+Buat H1 yang jelas, misalnya:
+"Rental Mobil Semarang – Kadar Rent Car"
+
+Gunakan H2 dan H3 yang logis. Hindari pengulangan keyword yang terasa dipaksakan.
+
+Jangan mengarang harga, diskon, nomor telepon, alamat, pengalaman bisnis, testimoni, rating, jam operasional, atau jaminan layanan.
+
+## 5. Konten Katalog dan Data Kendaraan
+
+Periksa apakah data mobil berasal dari file data terpusat.
+
+Jika memungkinkan, gunakan data yang sudah ada sebagai sumber informasi kendaraan.
+
+Pastikan:
+- Nama kendaraan dan kategori konsisten.
+- Alt text gambar menggambarkan mobil yang benar.
+- Foto placeholder tidak diberi alt text yang seolah-olah menunjukkan model mobil tertentu.
+- Informasi ketersediaan, harga, dan metode rental tidak dikarang.
+- Filter katalog tetap berfungsi.
+- Jika detail mobil hanya ditampilkan melalui modal, jangan membuat canonical atau sitemap untuk URL detail kendaraan yang tidak benar-benar tersedia.
+
+Jangan membuat route detail kendaraan baru sebagai bagian dari task ini kecuali ada kebutuhan nyata dan implementasi tersebut dapat diselesaikan tanpa merusak katalog.
+
+## 6. Informasi Area Layanan
+
+Tambahkan bagian ringkas tentang cakupan layanan Semarang dan Ungaran pada halaman yang relevan.
+
+Jelaskan bahwa pengantaran mobil atau penjemputan pelanggan dapat dilakukan sesuai kesepakatan, tanpa mengklaim seluruh titik di kedua wilayah pasti terlayani.
+
+Jangan mengarang:
+- Alamat kantor.
+- Koordinat bisnis.
+- Radius layanan.
+- Titik penjemputan.
+- Biaya antar atau penjemputan.
+- Waktu tempuh atau janji layanan.
+
+Untuk task awal ini, jangan membuat banyak halaman kota baru secara otomatis.
+
+Buat halaman `/area-layanan/ungaran` hanya jika setelah audit terdapat cukup informasi nyata untuk menghasilkan halaman yang unik dan bermanfaat. Jika data belum cukup, pertahankan informasi Ungaran pada halaman yang sudah ada dan jelaskan rekomendasi konten tambahan dalam laporan.
+
+## 7. Sitemap dan Robots
+
+Audit `app/sitemap.ts` dan `app/robots.ts`.
+
+Jika belum ada, buat menggunakan konvensi Next.js App Router.
+
+Sitemap harus:
+- Berisi URL production absolut yang benar.
+- Mencakup halaman publik yang benar-benar ada.
+- Tidak memasukkan localhost, URL preview, halaman 404, atau URL yang tidak tersedia.
+- Tidak mengklaim `lastModified` yang tidak dapat dibuktikan.
+- Tidak memasukkan halaman yang memang tidak boleh diindeks.
+
+Robots:
+- Jangan memblokir seluruh website production.
+- Cantumkan sitemap production yang benar.
+- Jangan menganggap robots.txt sebagai pengganti directive `noindex`.
+
+## 8. Structured Data
+
+Evaluasi kebutuhan structured data.
+
+Jika informasi bisnis yang diperlukan sudah tersedia, pertimbangkan `AutoRental` atau tipe Schema.org lain yang benar-benar sesuai untuk bisnis rental kendaraan.
+
+Gunakan hanya fakta yang dikonfirmasi dan sesuai dengan konten halaman.
+
+Jangan mengarang alamat, koordinat, jam operasional, harga, rating, ulasan, dan profil media sosial.
+
+Pastikan JSON-LD valid dan tidak bertentangan dengan metadata atau informasi yang terlihat pada halaman.
+
+Jangan menjanjikan rich results atau ranking tertentu hanya karena structured data ditambahkan.
+
+## 9. Performa, Aksesibilitas, dan Internal Linking
+
+- Pertahankan desain responsif yang sudah ada.
+- Periksa penggunaan Next.js Image dan alt text.
+- Pastikan link internal dapat dirayapi dan menuju URL yang valid.
+- Pastikan halaman penting dapat dijangkau melalui navigasi website.
+- Jangan menambahkan teks tersembunyi atau keyword stuffing.
 - Jangan menambahkan dependency baru jika tidak diperlukan.
-- Jangan menduplikasi Navbar dan Footer di dalam halaman 404 jika keduanya sudah disediakan oleh root layout.
-- Jangan mengubah halaman Home, Katalog, Profil, Syarat & Ketentuan, dan Kontak.
-- Jangan mengubah route yang sudah valid.
-- Jangan menutupi masalah routing dengan middleware atau redirect yang tidak diperlukan.
+- Jangan menghapus tombol WhatsApp atau mengubah fungsionalitas pemesanan.
 
-## 7. Verifikasi Wajib
+## 10. Verifikasi
 
-Setelah implementasi:
+Jalankan script yang tersedia pada `package.json` untuk:
+- Production build.
+- ESLint.
+- TypeScript.
 
-1. Jalankan pemeriksaan TypeScript, ESLint, dan production build menggunakan script yang tersedia di `package.json`.
-2. Perbaiki error yang disebabkan oleh perubahan ini.
-3. Jalankan aplikasi dan uji URL berikut:
-   - `/` harus menampilkan Home.
-   - `/katalog` harus menampilkan Katalog.
-   - `/profil` harus menampilkan Profil.
-   - `/syarat-ketentuan` harus menampilkan Syarat & Ketentuan.
-   - `/kontak` harus menampilkan Kontak.
-   - `/apa-aja` harus menampilkan halaman 404.
-   - `/halaman-tidak-ada` harus menampilkan halaman 404.
-4. Pastikan URL tidak dikenal tidak menghasilkan konten kosong.
-5. Pastikan Navbar dan Footer tetap berfungsi dan tampil normal.
-6. Periksa bahwa tombol "Kembali ke Beranda" dan "Lihat Katalog Mobil" menuju ke halaman yang benar.
+Jika browser tersedia, periksa:
+- `/`
+- `/katalog`
+- `/profil`
+- `/syarat-ketentuan`
+- `/kontak`
+- `/sitemap.xml`
+- `/robots.txt`
+- `/apa-aja` untuk memastikan 404 tetap benar.
 
-Jangan menyatakan pengujian browser berhasil jika hanya menjalankan build. Jika browser automation tidak tersedia, jelaskan pengujian yang sudah dilakukan dan berikan langkah pengujian manual.
+Periksa metadata HTML dan canonical pada halaman production jika deployment tersedia.
 
-## 8. Laporan Akhir
+Jangan mengklaim URL sudah terindeks atau ranking meningkat hanya berdasarkan build lokal.
 
-Setelah selesai, laporkan:
+## 11. Laporan Akhir
 
-- Penyebab utama masalah 404.
-- File yang dibuat atau diubah.
-- Perbaikan yang dilakukan.
-- Hasil TypeScript, ESLint, dan production build.
-- Hasil verifikasi route yang valid dan URL yang tidak dikenal.
-- Apakah pengujian browser dilakukan atau masih perlu diuji secara manual.
+Laporkan:
+1. Hasil audit SEO awal.
+2. Keyword prioritas yang dipetakan ke setiap halaman.
+3. File yang dibuat dan diubah.
+4. Metadata, canonical, sitemap, robots, dan structured data yang diperbaiki.
+5. Data bisnis yang masih perlu dilengkapi oleh pemilik.
+6. Hasil build, lint, TypeScript, dan pengujian browser.
+7. Langkah selanjutnya untuk Google Search Console dan validasi keyword.
 
-Kerjakan task ini pada project yang sudah ada dan pertahankan semua implementasi sebelumnya.
+Implementasikan perubahan pada project yang sudah ada. Jangan berhenti hanya dengan memberikan saran.

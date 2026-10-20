@@ -7,11 +7,14 @@ import { buildWhatsAppUrl } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Profil Perusahaan",
   description:
-    "Kenali lebih dekat Kadar Rent Car — layanan rental mobil terpercaya dengan pilihan kendaraan beragam dan dua metode sewa: lepas kunci dan dengan driver.",
+    "Kenali Kadar Rent Car — layanan rental mobil di Semarang dan Ungaran. Pilihan lepas kunci dan dengan driver, armada MPV, SUV, dan sedan.",
+  alternates: {
+    canonical: "/profil",
+  },
   openGraph: {
     title: "Profil Perusahaan — Kadar Rent Car",
     description:
-      "Layanan rental mobil terpercaya dengan armada beragam dan pengemudi profesional.",
+      "Kadar Rent Car: rental mobil terpercaya di Semarang dan Ungaran, armada beragam, pengemudi profesional.",
     locale: "id_ID",
     type: "website",
   },
@@ -56,15 +59,16 @@ export default function ProfilPage() {
                   Tentang {config.companyName}
                 </h2>
                 <p className="text-lg leading-relaxed" style={{ color: "#64748B" }}>
-                  {config.companyName} adalah penyedia layanan rental mobil profesional yang
-                  berkomitmen menghadirkan pengalaman perjalanan yang nyaman, aman, dan terpercaya
-                  bagi setiap pelanggan.
+                  {config.companyName} adalah penyedia layanan rental mobil profesional
+                  yang berkomitmen menghadirkan pengalaman perjalanan yang nyaman, aman,
+                  dan terpercaya di <strong>Semarang</strong> dan <strong>Ungaran</strong>.
                 </p>
                 <p className="leading-relaxed" style={{ color: "#64748B" }}>
-                  Kami menyediakan armada kendaraan beragam — mulai dari MPV keluarga, SUV tangguh,
-                  hingga sedan premium — dengan dua pilihan metode sewa yang fleksibel: lepas kunci
-                  untuk Anda yang ingin kebebasan penuh, dan dengan driver profesional untuk
-                  perjalanan yang lebih santai.
+                  Kami menyediakan armada kendaraan beragam — mulai dari MPV keluarga,
+                  SUV tangguh, hingga sedan premium — dengan dua pilihan metode sewa
+                  yang fleksibel: lepas kunci untuk Anda yang ingin kebebasan penuh,
+                  dan dengan driver profesional untuk perjalanan yang lebih santai.
+                  Pengantaran dan penjemputan dapat diatur sesuai kesepakatan.
                 </p>
                 {/* PLACEHOLDER — Informasi tahun berdiri dan jumlah armada perlu dikonfirmasi pemilik bisnis */}
                 <div

@@ -8,12 +8,24 @@ import { config } from "@/lib/config";
 import { buildWhatsAppUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Kadar Rent Car — Sewa Mobil Nyaman & Terpercaya",
+  title: "Rental Mobil Semarang – Kadar Rent Car",
   description:
-    "Kadar Rent Car menyediakan layanan rental mobil terpercaya di Indonesia. Pilihan sewa lepas kunci dan dengan driver, kendaraan beragam dari MPV hingga SUV premium.",
+    "Kadar Rent Car — rental mobil Semarang dan Ungaran. Pilihan sewa lepas kunci dan dengan driver. Armada MPV, SUV, Sedan. Hubungi kami via WhatsApp untuk pemesanan.",
+  keywords: [
+    "rental mobil Semarang",
+    "sewa mobil Semarang",
+    "Kadar Rent Car Semarang",
+    "rental mobil lepas kunci Semarang",
+    "rental mobil dengan driver Semarang",
+    "rental mobil Ungaran",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Kadar Rent Car — Sewa Mobil Nyaman & Terpercaya",
-    description: "Layanan rental mobil terpercaya dengan pilihan lepas kunci dan dengan driver.",
+    title: "Rental Mobil Semarang – Kadar Rent Car",
+    description:
+      "Layanan rental mobil Semarang dan Ungaran. Lepas kunci atau dengan driver profesional.",
     locale: "id_ID",
     type: "website",
   },
@@ -69,8 +81,8 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title="Perjalanan Nyaman Dimulai Bersama Kadar Rent Car"
-        subtitle="Layanan rental mobil terpercaya dengan pilihan kendaraan beragam. Sewa lepas kunci atau dengan driver profesional — sesuaikan dengan kebutuhan perjalanan Anda."
+        title="Rental Mobil Semarang – Kadar Rent Car"
+        subtitle="Layanan rental mobil terpercaya di Semarang dan Ungaran. Sewa lepas kunci atau dengan driver profesional — armada MPV, SUV, dan sedan siap menemani perjalanan Anda."
         primaryCta={{ label: "Lihat Katalog Mobil", href: "/katalog" }}
         secondaryCta={{ label: "Hubungi Kami", href: waContactUrl }}
       />
@@ -201,6 +213,86 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Service Area Section */}
+      <section
+        className="py-16 sm:py-20 bg-white"
+        aria-labelledby="area-layanan-heading"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Area Layanan"
+            subtitle="Kadar Rent Car melayani kebutuhan rental mobil di Semarang dan sekitarnya."
+            centered
+          />
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {/* Semarang */}
+            <div
+              className="flex flex-col gap-4 rounded-2xl border p-8"
+              style={{ borderColor: "#EAF2FF", backgroundColor: "#F8FBFF" }}
+            >
+              <div
+                className="flex h-14 w-14 items-center justify-center rounded-xl"
+                style={{ backgroundColor: "#EAF2FF" }}
+              >
+                <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="#155EEF" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold" style={{ color: "#172B4D" }}>Semarang</h3>
+                <p className="mt-2 leading-relaxed" style={{ color: "#64748B" }}>
+                  Pusat layanan Kadar Rent Car. Kami melayani kebutuhan rental mobil
+                  harian, mingguan, dan bulanan di Semarang — baik untuk perjalanan
+                  dalam kota maupun ke luar kota.
+                </p>
+              </div>
+              <Link
+                href="/katalog"
+                className="mt-auto inline-flex items-center justify-center rounded-lg border px-5 py-2.5 text-sm font-semibold transition hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2"
+                style={{ borderColor: "#155EEF", color: "#155EEF", minHeight: 44 }}
+              >
+                Lihat Pilihan Mobil
+              </Link>
+            </div>
+
+            {/* Ungaran */}
+            <div
+              className="flex flex-col gap-4 rounded-2xl p-8 text-white"
+              style={{ background: "linear-gradient(135deg, #102A56 0%, #155EEF 100%)" }}
+            >
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/20">
+                <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="white" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold">Ungaran</h3>
+                <p className="mt-2 leading-relaxed" style={{ color: "#c8daf0" }}>
+                  Kami juga melayani pelanggan di Ungaran dan sekitarnya.
+                  Pengantaran atau penjemputan dapat diatur sesuai kesepakatan
+                  — hubungi kami untuk konfirmasi ketersediaan.
+                </p>
+              </div>
+              <a
+                href={waContactUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-flex items-center justify-center rounded-lg border border-white/60 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                style={{ minHeight: 44 }}
+              >
+                Tanya Ketersediaan
+              </a>
+            </div>
+          </div>
+          <p className="mx-auto mt-6 max-w-2xl text-center text-sm" style={{ color: "#94A3B8" }}>
+            Pengantaran dan penjemputan dilakukan sesuai kesepakatan. Hubungi kami
+            untuk informasi lebih lanjut mengenai area dan ketentuan layanan.
+          </p>
+        </div>
+      </section>
 
       {/* Closing CTA */}
       <section

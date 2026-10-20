@@ -4,12 +4,23 @@ import CarFilters from "@/components/CarFilters";
 import { cars } from "@/data/cars";
 
 export const metadata: Metadata = {
-  title: "Katalog Mobil",
+  title: "Katalog Mobil Rental Semarang",
   description:
-    "Telusuri katalog kendaraan Kadar Rent Car. Pilih dari MPV, SUV, Sedan hingga Premium dengan opsi sewa lepas kunci atau dengan driver.",
+    "Pilihan mobil rental di Semarang dan Ungaran: MPV, SUV, Sedan. Tersedia sewa lepas kunci dan dengan driver. Cari dan filter armada Kadar Rent Car.",
+  keywords: [
+    "katalog mobil rental Semarang",
+    "pilihan mobil rental Semarang",
+    "sewa MPV Semarang",
+    "sewa SUV Semarang",
+    "rental mobil lepas kunci Semarang",
+    "rental mobil dengan driver Semarang",
+  ],
+  alternates: {
+    canonical: "/katalog",
+  },
   openGraph: {
-    title: "Katalog Mobil — Kadar Rent Car",
-    description: "Temukan kendaraan yang tepat untuk perjalanan Anda.",
+    title: "Katalog Mobil Rental Semarang — Kadar Rent Car",
+    description: "Temukan mobil yang tepat untuk perjalanan Anda di Semarang dan Ungaran.",
     locale: "id_ID",
     type: "website",
   },
