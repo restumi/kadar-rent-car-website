@@ -7,7 +7,7 @@ export const config = {
    * JANGAN menggunakan localhost atau URL preview Vercel sebagai nilai default.
    * Baca dari env var NEXT_PUBLIC_SITE_URL jika tersedia.
    */
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kadarrentcar.vercel.app",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kadar-jaya-trans.vercel.app/",
   whatsappNumber: "6281234567890", // [PLACEHOLDER — Ganti dengan nomor WhatsApp aktual sebelum deployment]
   phoneNumber: "+62 812-3456-7890", // [PLACEHOLDER — Ganti dengan nomor telepon aktual]
   address: "[Alamat Perusahaan — Harap dikonfigurasi oleh pemilik bisnis]",

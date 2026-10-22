@@ -10,8 +10,13 @@ export const metadata: Metadata = {
   keywords: [
     "kontak Kadar Rent Car",
     "Kadar Rent Car Semarang",
+    "Kadar jaya trans",
     "rental mobil Semarang",
     "rental mobil Ungaran",
+    "sewa mobil Semarang",
+    "sewa mobil Ungaran",
+    "sewa mobil",
+    "rental mobil mobil",
     "informasi layanan rental",
   ],
   alternates: {

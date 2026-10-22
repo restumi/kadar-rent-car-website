@@ -10,10 +10,12 @@ export const metadata: Metadata = {
   keywords: [
     "katalog mobil rental Semarang",
     "pilihan mobil rental Semarang",
-    "sewa MPV Semarang",
-    "sewa SUV Semarang",
+    "sewa mobil Semarang",
+    "sewa mobil",
     "rental mobil lepas kunci Semarang",
     "rental mobil dengan driver Semarang",
+    "sewa mobil lepas kunci Semarang",
+    "sewa mobil dengan driver Semarang",
   ],
   alternates: {
     canonical: "/katalog",

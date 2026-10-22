@@ -17,6 +17,8 @@ export const metadata: Metadata = {
     "Kadar Rent Car Semarang",
     "rental mobil lepas kunci Semarang",
     "rental mobil dengan driver Semarang",
+    "sewa mobil lepas kunci Semarang",
+    "sewa mobil dengan driver Semarang",
     "rental mobil Ungaran",
   ],
   alternates: {
