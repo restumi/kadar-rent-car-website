@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "rental mobil Ungaran",
     "sewa mobil Ungaran",
   ],
+  verification: {
+    google: "ZjrGsq9PKNe5DZ91oPi7ZnHh9j7U-99fk5wR31fjBYE",
+  },
   openGraph: {
     locale: "id_ID",
     type: "website",
