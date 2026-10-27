@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface CtaButton {
   label: string;
@@ -10,13 +11,24 @@ interface HeroSectionProps {
   subtitle: string;
   primaryCta: CtaButton;
   secondaryCta: CtaButton;
+  /** Path gambar hero dari /public. Jika tidak diisi, tampilkan ilustrasi SVG. */
+  imageSrc?: string;
+  /** Alt text untuk gambar hero (wajib jika imageSrc diisi). */
+  imageAlt?: string;
 }
 
 function isExternal(href: string) {
   return href.startsWith("http://") || href.startsWith("https://");
 }
 
-export default function HeroSection({ title, subtitle, primaryCta, secondaryCta }: HeroSectionProps) {
+export default function HeroSection({
+  title,
+  subtitle,
+  primaryCta,
+  secondaryCta,
+  imageSrc,
+  imageAlt,
+}: HeroSectionProps) {
   return (
     <section
       className="relative overflow-hidden"
@@ -90,44 +102,59 @@ export default function HeroSection({ title, subtitle, primaryCta, secondaryCta 
             </div>
           </div>
 
-          {/* Car illustration */}
-          <div className="flex justify-center md:justify-end" aria-hidden="true">
-            <svg
-              viewBox="0 0 520 320"
-              className="w-full max-w-sm md:max-w-lg"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              {/* Road */}
-              <ellipse cx="260" cy="290" rx="220" ry="18" fill="rgba(255,255,255,0.08)" />
-              {/* Car body */}
-              <rect x="80" y="170" width="360" height="90" rx="16" fill="rgba(255,255,255,0.18)" />
-              {/* Cabin */}
-              <path d="M155 170 L185 110 L335 110 L365 170 Z" fill="rgba(255,255,255,0.22)" />
-              {/* Windows */}
-              <path d="M195 120 L210 168 H260 V120 Z" fill="rgba(234,242,255,0.4)" />
-              <path d="M265 120 V168 H315 L325 120 Z" fill="rgba(234,242,255,0.4)" />
-              {/* Left wheel */}
-              <circle cx="165" cy="262" r="36" fill="rgba(16,42,86,0.7)" />
-              <circle cx="165" cy="262" r="22" fill="rgba(255,255,255,0.15)" />
-              <circle cx="165" cy="262" r="8" fill="rgba(255,255,255,0.3)" />
-              {/* Right wheel */}
-              <circle cx="355" cy="262" r="36" fill="rgba(16,42,86,0.7)" />
-              <circle cx="355" cy="262" r="22" fill="rgba(255,255,255,0.15)" />
-              <circle cx="355" cy="262" r="8" fill="rgba(255,255,255,0.3)" />
-              {/* Headlight */}
-              <rect x="80" y="195" width="28" height="16" rx="4" fill="rgba(255,235,100,0.7)" />
-              {/* Taillight */}
-              <rect x="412" y="195" width="28" height="16" rx="4" fill="rgba(255,80,80,0.6)" />
-              {/* Door line */}
-              <line x1="260" y1="172" x2="260" y2="258" stroke="rgba(255,255,255,0.2)" strokeWidth="2" />
-              {/* Stars */}
-              <circle cx="420" cy="60" r="3" fill="rgba(255,255,255,0.4)" />
-              <circle cx="100" cy="50" r="2" fill="rgba(255,255,255,0.3)" />
-              <circle cx="460" cy="110" r="2" fill="rgba(255,255,255,0.25)" />
-              <circle cx="60" cy="130" r="1.5" fill="rgba(255,255,255,0.3)" />
-            </svg>
+          {/* Visual: real image or SVG fallback */}
+          <div className="flex justify-center md:justify-end">
+            {imageSrc ? (
+              <div className="relative w-full max-w-sm overflow-hidden rounded-2xl shadow-2xl md:max-w-lg">
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt ?? title}
+                  width={640}
+                  height={400}
+                  priority
+                  className="h-auto w-full object-cover"
+                  style={{ aspectRatio: "16/10" }}
+                />
+              </div>
+            ) : (
+              /* SVG illustration fallback */
+              <svg
+                viewBox="0 0 520 320"
+                className="w-full max-w-sm md:max-w-lg"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                {/* Road */}
+                <ellipse cx="260" cy="290" rx="220" ry="18" fill="rgba(255,255,255,0.08)" />
+                {/* Car body */}
+                <rect x="80" y="170" width="360" height="90" rx="16" fill="rgba(255,255,255,0.18)" />
+                {/* Cabin */}
+                <path d="M155 170 L185 110 L335 110 L365 170 Z" fill="rgba(255,255,255,0.22)" />
+                {/* Windows */}
+                <path d="M195 120 L210 168 H260 V120 Z" fill="rgba(234,242,255,0.4)" />
+                <path d="M265 120 V168 H315 L325 120 Z" fill="rgba(234,242,255,0.4)" />
+                {/* Left wheel */}
+                <circle cx="165" cy="262" r="36" fill="rgba(16,42,86,0.7)" />
+                <circle cx="165" cy="262" r="22" fill="rgba(255,255,255,0.15)" />
+                <circle cx="165" cy="262" r="8" fill="rgba(255,255,255,0.3)" />
+                {/* Right wheel */}
+                <circle cx="355" cy="262" r="36" fill="rgba(16,42,86,0.7)" />
+                <circle cx="355" cy="262" r="22" fill="rgba(255,255,255,0.15)" />
+                <circle cx="355" cy="262" r="8" fill="rgba(255,255,255,0.3)" />
+                {/* Headlight */}
+                <rect x="80" y="195" width="28" height="16" rx="4" fill="rgba(255,235,100,0.7)" />
+                {/* Taillight */}
+                <rect x="412" y="195" width="28" height="16" rx="4" fill="rgba(255,80,80,0.6)" />
+                {/* Door line */}
+                <line x1="260" y1="172" x2="260" y2="258" stroke="rgba(255,255,255,0.2)" strokeWidth="2" />
+                {/* Stars */}
+                <circle cx="420" cy="60" r="3" fill="rgba(255,255,255,0.4)" />
+                <circle cx="100" cy="50" r="2" fill="rgba(255,255,255,0.3)" />
+                <circle cx="460" cy="110" r="2" fill="rgba(255,255,255,0.25)" />
+                <circle cx="60" cy="130" r="1.5" fill="rgba(255,255,255,0.3)" />
+              </svg>
+            )}
           </div>
         </div>
       </div>

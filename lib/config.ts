@@ -7,16 +7,16 @@ export const config = {
    * JANGAN menggunakan localhost atau URL preview Vercel sebagai nilai default.
    * Baca dari env var NEXT_PUBLIC_SITE_URL jika tersedia.
    */
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kadar-jaya-trans.vercel.app/",
-  whatsappNumber: "6281234567890", // [PLACEHOLDER — Ganti dengan nomor WhatsApp aktual sebelum deployment]
-  phoneNumber: "+62 812-3456-7890", // [PLACEHOLDER — Ganti dengan nomor telepon aktual]
-  address: "[Alamat Perusahaan — Harap dikonfigurasi oleh pemilik bisnis]",
-  googleMapsUrl: "https://maps.google.com/?q=[Koordinat+Lokasi]", // [PLACEHOLDER — Ganti dengan URL Google Maps aktual]
-  operatingHours: "Senin – Sabtu: 08.00–17.00 WIB",
-  email: "info@kadarrentcar.com", // [PLACEHOLDER — Ganti dengan email aktual]
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kadar-jaya-trans.vercel.app",
+  whatsappNumber: "6285866661108",
+  phoneNumber: "+62 858-6666-1108",
+  address: "Jl. Cumi-Cumi Raya, RT.01/RW.08, Bandarharjo, Kec. Semarang Utara, Kota Semarang, Jawa Tengah 50175",
+  googleMapsUrl: "https://maps.app.goo.gl/RCyL7WVcSCSmARfv9",
+  operatingHours: "setiap hari: 24 jam",
+  email: "info@kadarrentcar.com",
   socialMedia: {
-    instagram: "", // [PLACEHOLDER — Isi dengan username Instagram jika tersedia]
-    facebook: "",  // [PLACEHOLDER — Isi dengan URL Facebook jika tersedia]
+    instagram: "",
+    facebook: "", 
   },
 } as const;
 

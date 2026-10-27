@@ -87,6 +87,8 @@ export default function HomePage() {
         subtitle="Layanan rental mobil terpercaya di Semarang dan Ungaran. Sewa lepas kunci atau dengan driver profesional — armada MPV, SUV, dan sedan siap menemani perjalanan Anda."
         primaryCta={{ label: "Lihat Katalog Mobil", href: "/katalog" }}
         secondaryCta={{ label: "Hubungi Kami", href: waContactUrl }}
+        imageSrc="/images/hero-image.png"
+        imageAlt="Armada Kadar Rent Car — rental mobil Semarang"
       />
 
       {/* Service Highlights */}

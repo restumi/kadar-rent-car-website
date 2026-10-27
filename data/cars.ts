@@ -28,11 +28,48 @@ export interface Car {
 }
 
 /**
- * Data kendaraan terpusat — ganti dengan data armada aktual sebelum deployment produksi.
- * Minimal 6 kendaraan: 2 City Car/MPV, 2 SUV, 2 Sedan/Premium.
+ * Data kendaraan terpusat — sesuai armada aktual Kadar Rent Car.
+ * Perbarui pricePerDay dengan harga aktual sebelum deployment produksi.
  */
 export const cars: Car[] = [
-  // ── City Car / MPV ──────────────────────────────────────────────────────────
+  // ── City Car ────────────────────────────────────────────────────────────────
+
+  {
+    id: "honda-brio",
+    name: "Honda Brio",
+    category: "City Car",
+    rentalMethods: "lepas-kunci",
+    passengerCapacity: 4,
+    transmission: "Manual",
+    pricePerDay: undefined, // [PLACEHOLDER — Isi harga aktual]
+    images: ["/images/cars/brio.png"],
+    description:
+      "City car kompak dan lincah, ideal untuk mobilitas harian di dalam kota. Irit bahan bakar dan mudah diparkir.",
+    specifications: {
+      Mesin: "1.2L",
+      Transmisi: "Manual 5-percepatan",
+    },
+    isFeatured: false,
+  },
+  {
+    id: "daihatsu-ayla",
+    name: "Daihatsu Ayla",
+    category: "City Car",
+    rentalMethods: "lepas-kunci",
+    passengerCapacity: 4,
+    transmission: "Manual",
+    pricePerDay: undefined, // [PLACEHOLDER — Isi harga aktual]
+    images: ["/images/cars/ayla.png"],
+    description:
+      "City car ekonomis dengan konsumsi bahan bakar yang efisien. Cocok untuk perjalanan singkat dalam kota.",
+    specifications: {
+      Mesin: "1.0L",
+      Transmisi: "Manual 5-percepatan",
+    },
+    isFeatured: false,
+  },
+
+  // ── MPV ─────────────────────────────────────────────────────────────────────
 
   {
     id: "toyota-avanza",
@@ -42,12 +79,30 @@ export const cars: Car[] = [
     passengerCapacity: 7,
     transmission: "Manual",
     pricePerDay: undefined, // [PLACEHOLDER — Isi harga aktual]
-    images: ["/images/cars/placeholder.svg"],
+    images: ["/images/cars/avanza.png"],
     description:
       "MPV serbaguna yang nyaman untuk perjalanan keluarga maupun bisnis. Kabin luas dan irit bahan bakar menjadikannya pilihan populer.",
     specifications: {
       Mesin: "1.3L / 1.5L",
       Transmisi: "Manual 5-percepatan",
+      "Kapasitas BBM": "45 liter",
+    },
+    isFeatured: true,
+  },
+  {
+    id: "toyota-avanza-veloz",
+    name: "Toyota Avanza Veloz",
+    category: "MPV",
+    rentalMethods: "keduanya",
+    passengerCapacity: 7,
+    transmission: "Otomatis",
+    pricePerDay: undefined, // [PLACEHOLDER — Isi harga aktual]
+    images: ["/images/cars/avanza-veloz.png"],
+    description:
+      "Versi sporty dari Avanza dengan transmisi otomatis. Kabin luas dan nyaman untuk perjalanan keluarga jarak jauh.",
+    specifications: {
+      Mesin: "1.5L",
+      Transmisi: "CVT Otomatis",
       "Kapasitas BBM": "45 liter",
     },
     isFeatured: true,
@@ -60,7 +115,7 @@ export const cars: Car[] = [
     passengerCapacity: 7,
     transmission: "Manual",
     pricePerDay: undefined, // [PLACEHOLDER — Isi harga aktual]
-    images: ["/images/cars/placeholder.svg"],
+    images: ["/images/cars/xenia.png"],
     description:
       "MPV tangguh dan ekonomis, cocok untuk perjalanan dalam kota maupun luar kota bersama keluarga.",
     specifications: {
@@ -70,81 +125,76 @@ export const cars: Car[] = [
     },
     isFeatured: true,
   },
-
-  // ── SUV ─────────────────────────────────────────────────────────────────────
-
   {
-    id: "toyota-fortuner",
-    name: "Toyota Fortuner",
-    category: "SUV",
+    id: "toyota-innova-reborn",
+    name: "Toyota Innova Reborn",
+    category: "MPV",
+    rentalMethods: "keduanya",
+    passengerCapacity: 7,
+    transmission: "Manual",
+    pricePerDay: undefined, // [PLACEHOLDER — Isi harga aktual]
+    images: ["/images/cars/inova-reborn.png"],
+    description:
+      "MPV premium dengan mesin diesel bertenaga. Kabin luas dan nyaman, cocok untuk perjalanan keluarga dan bisnis jarak jauh.",
+    specifications: {
+      Mesin: "2.4L Diesel",
+      Transmisi: "Manual 6-percepatan",
+      "Kapasitas BBM": "55 liter",
+    },
+    isFeatured: true,
+  },
+  {
+    id: "toyota-innova-zenix",
+    name: "Toyota Innova Zenix",
+    category: "MPV",
     rentalMethods: "keduanya",
     passengerCapacity: 7,
     transmission: "Otomatis",
     pricePerDay: undefined, // [PLACEHOLDER — Isi harga aktual]
-    images: ["/images/cars/placeholder.svg"],
+    images: ["/images/cars/inova-zenix.png"],
     description:
-      "SUV premium dengan ground clearance tinggi, ideal untuk perjalanan lintas kota maupun medan yang lebih menantang.",
+      "Generasi terbaru Innova dengan desain modern dan kabin premium. Tersedia transmisi otomatis untuk kenyamanan berkendara maksimal.",
     specifications: {
-      Mesin: "2.4L Diesel",
-      Transmisi: "Otomatis 6-percepatan",
-      Penggerak: "4x2 / 4x4",
+      Mesin: "2.0L Hybrid / 2.0L Bensin",
+      Transmisi: "CVT Otomatis",
+      "Kapasitas BBM": "50 liter",
     },
     isFeatured: true,
   },
   {
-    id: "mitsubishi-pajero",
-    name: "Mitsubishi Pajero Sport",
-    category: "SUV",
+    id: "toyota-hiace",
+    name: "Toyota HiAce",
+    category: "MPV",
     rentalMethods: "dengan-driver",
-    passengerCapacity: 7,
-    transmission: "Otomatis",
+    passengerCapacity: 14,
+    transmission: "Manual",
     pricePerDay: undefined, // [PLACEHOLDER — Isi harga aktual]
-    images: ["/images/cars/placeholder.svg"],
+    images: ["/images/cars/hiace.png"],
     description:
-      "SUV bertenaga besar dengan interior mewah dan teknologi keselamatan terkini, cocok untuk perjalanan bisnis dan wisata premium.",
+      "Minibus kapasitas besar, ideal untuk perjalanan rombongan, wisata kelompok, dan kebutuhan transportasi korporat.",
     specifications: {
-      Mesin: "2.4L Diesel",
-      Transmisi: "Otomatis 8-percepatan",
-      Penggerak: "4x2",
+      Mesin: "2.7L Bensin",
+      Transmisi: "Manual 5-percepatan",
+      "Kapasitas BBM": "70 liter",
     },
     isFeatured: false,
   },
 
-  // ── Sedan / Premium ──────────────────────────────────────────────────────────
+  // ── Pickup ───────────────────────────────────────────────────────────────────
 
   {
-    id: "toyota-camry",
-    name: "Toyota Camry",
-    category: "Sedan",
-    rentalMethods: "dengan-driver",
-    passengerCapacity: 5,
-    transmission: "Otomatis",
+    id: "pickup",
+    name: "Pickup",
+    category: "MPV",
+    rentalMethods: "lepas-kunci",
+    passengerCapacity: 3,
+    transmission: "Manual",
     pricePerDay: undefined, // [PLACEHOLDER — Isi harga aktual]
-    images: ["/images/cars/placeholder.svg"],
+    images: ["/images/cars/pickup.png"],
     description:
-      "Sedan premium dengan kabin yang senyap dan nyaman, pilihan sempurna untuk perjalanan bisnis dan acara formal.",
+      "Kendaraan pickup untuk kebutuhan angkutan barang dan logistik. Tenaga kuat dan bak terbuka untuk berbagai kebutuhan.",
     specifications: {
-      Mesin: "2.5L Hybrid",
-      Transmisi: "CVT Otomatis",
-      Fitur: "Dual Zone AC, Leather Seat",
-    },
-    isFeatured: true,
-  },
-  {
-    id: "honda-accord",
-    name: "Honda Accord",
-    category: "Sedan",
-    rentalMethods: "dengan-driver",
-    passengerCapacity: 5,
-    transmission: "Otomatis",
-    pricePerDay: undefined, // [PLACEHOLDER — Isi harga aktual]
-    images: ["/images/cars/placeholder.svg"],
-    description:
-      "Sedan elegan dengan handling responsif dan interior berkelas. Pilihan ideal untuk representasi dan perjalanan eksekutif.",
-    specifications: {
-      Mesin: "1.5L Turbo",
-      Transmisi: "CVT Otomatis",
-      Fitur: "Apple CarPlay, Android Auto",
+      Transmisi: "Manual",
     },
     isFeatured: false,
   },
