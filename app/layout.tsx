@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(config.siteUrl),
+  applicationName: "Kadar Rent Car",
   title: {
     default: "Kadar Rent Car — Rental Mobil Semarang & Ungaran",
     template: "%s — Kadar Rent Car",
@@ -45,6 +46,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const jsonLdWebSite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kadar Rent Car",
+    "alternateName": "Kadar Jaya Trans",
+    "url": config.siteUrl,
+  };
+
   // Build JSON-LD only with confirmed facts — no placeholder values emitted.
   const addressIsReal = !config.address.startsWith("[");
   const phoneIsReal = !config.phoneNumber.startsWith("[");
@@ -80,6 +89,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col" style={{ backgroundColor: "#F7F9FC" }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
