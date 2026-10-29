@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -38,16 +39,23 @@ export default function Navbar() {
           {/* Logo — Requirement 2.1 */}
           <Link
             href="/"
-            className="flex-shrink-0 text-xl font-bold tracking-tight"
-            style={{ color: "#102A56" }}
+            className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded"
             aria-label="Kadar Rent Car — Halaman Utama"
           >
-            Kadar Rent Car
+            <Image
+              src="/images/logo-navbar.png"
+              alt="Kadar Rent Car"
+              width={0}
+              height={0}
+              sizes="100vw"
+              priority
+              className="h-7 w-auto"
+            />
           </Link>
 
           {/* Desktop navigation — hidden below md (Requirement 2.5) */}
           <ul
-            className="hidden md:flex md:items-center md:gap-1"
+            className="hidden lg:flex lg:items-center lg:gap-1"
             role="list"
           >
             {navLinks.map(({ label, href }) => {
@@ -88,7 +96,7 @@ export default function Navbar() {
           {/* Hamburger button — visible below md (Requirement 2.5, 2.6, 2.10) */}
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset md:hidden"
+            className="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset lg:hidden"
             style={{ minWidth: 44, minHeight: 44 }}
             onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-expanded={isMenuOpen}
